@@ -1,11 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.scss';
-import App from './App';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import store from './store'
+import App from './App'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import './index.scss'
+
+const render = Component => (
+  ReactDOM.render(
+    <Provider store={store}>
+      <Component />
+    </Provider>, 
+    document.getElementById('root')
+  )
+)
+
+render(App)
+
+if (module.hot) {
+  module.hot.accept('./App', () => {
+    const NextApp = require('./App').default
+    render(NextApp)
+  })
+}
