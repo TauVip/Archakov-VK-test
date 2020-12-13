@@ -1,18 +1,13 @@
-import { Panel } from './components'
+import { Columns } from './containers'
 
 function App() {
   return (
     <div className='app'>
-      <Panel cards={[
-        { text: 'Пройти курс по React' },
-        { text: 'Отметить день рождения' },
-        { text: 'Записаться на курсы английского языка, чтобы уехать жить в Лондон' }
-      ]} />
-      <Panel cards={null} />
+      <Columns />
     </div>
   )
 }
 
 export default App;
 
-// Разработка тестового задания на стажировку в VK | 1:53:47
+// Разработка тестового задания на стажировку в VK #2 | 39:25
