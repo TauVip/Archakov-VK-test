@@ -39,10 +39,12 @@ export default (state = initialState, action) => {
         return item
       })
     case 'COLUMNS:ADD':
-      return [
-        ...state,
-        action.payload
-      ]
+      return [ ...state, {
+        title: action.payload,
+        cards: []
+      }]
+    case 'COLUMNS:REMOVE':
+      return state.filter((_, index) => action.payload !== index)
     default:
       return state
   }

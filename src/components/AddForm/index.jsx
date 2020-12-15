@@ -18,12 +18,12 @@ const AddForm = ({ columnIndex, onAddCard, onAddColumn, isEmptyColumn }) => {
 
   const onAdd = () => {
     if (isEmptyColumn) {
-      onAddColumn()
+      onAddColumn(value)
     } else {
       onAddCard(columnIndex, value)
-      setValue('')
-      setShowForm(false)
     }
+    setValue('')
+    setShowForm(false)
   }
 
   return <>

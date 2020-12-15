@@ -3,7 +3,7 @@ import { Column } from '../components'
 import columnsActions from '../actions/columns'
 import cardsActions from '../actions/cards'
 
-const Columns = ({ items, addColumn, addCard }) => (
+const Columns = ({ items, addColumn, addCard, removeColumn }) => (
   <>
     {items.map((item, index) => (
       <Column 
@@ -12,6 +12,7 @@ const Columns = ({ items, addColumn, addCard }) => (
         columnIndex={index}
         onAddColumn={addColumn} 
         onAddCard={addCard} 
+        onRemove={removeColumn}
       />
     ))}
     <Column onAddColumn={addColumn} onAddCard={addCard} />
